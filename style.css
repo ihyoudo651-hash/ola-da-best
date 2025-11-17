@@ -1,0 +1,144 @@
+/*
+    CSS for Ola is the Best Website
+    Using Bebas Neue for an impactful, anime-style look.
+*/
+
+:root {
+    --blue-anime: #00bcd4; /* A bright, vibrant blue */
+    --dark-bg: #1e1e1e;   /* Dark background for contrast */
+    --light-text: #f0f0f0; /* Light text color */
+}
+
+body {
+    font-family: sans-serif;
+    background-color: var(--dark-bg);
+    color: var(--light-text);
+    margin: 0;
+    padding: 0;
+    text-align: center;
+}
+
+/* --- HERO SECTION / MAIN TITLE --- */
+.hero {
+    background: linear-gradient(135deg, var(--dark-bg), #333);
+    padding: 50px 20px;
+    border-bottom: 5px solid var(--blue-anime);
+}
+
+#main-title {
+    /* Use the imported anime-style font */
+    font-family: 'Bebas Neue', cursive;
+    font-size: 8rem; /* BIG TEXT */
+    letter-spacing: 10px;
+    /* The main blue color */
+    color: var(--blue-anime);
+    /* Subtle text shadow for a dramatic effect */
+    text-shadow: 0 0 15px rgba(0, 188, 212, 0.8), 0 0 5px rgba(0, 188, 212, 0.4);
+    margin: 0;
+    animation: neon-pulse 3s infinite alternate; /* Anime-style pulsing effect */
+}
+
+@keyframes neon-pulse {
+    from {
+        text-shadow: 0 0 5px rgba(0, 188, 212, 0.6), 0 0 10px rgba(0, 188, 212, 0.4);
+    }
+    to {
+        text-shadow: 0 0 20px rgba(0, 188, 212, 1), 0 0 30px rgba(0, 188, 212, 0.8);
+    }
+}
+
+
+/* --- CONTENT AND IMAGE --- */
+.content-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 40px 20px;
+}
+
+.image-container {
+    position: relative;
+    width: 350px; /* Set a max width */
+    margin-bottom: 30px;
+    border: 5px solid var(--blue-anime);
+    box-shadow: 0 0 20px rgba(0, 188, 212, 0.5);
+    overflow: hidden;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.image-container:hover {
+    transform: scale(1.05) rotate(-2deg); /* Cool hover effect */
+}
+
+#ola-image {
+    width: 100%;
+    height: auto;
+    display: block;
+    filter: grayscale(10%); /* Subtle anime filter */
+    transition: filter 0.3s ease;
+}
+
+.image-container:hover #ola-image {
+    filter: grayscale(0%); /* Full color on hover */
+}
+
+.image-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 188, 212, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-weight: bold;
+    font-size: 1.5rem;
+    opacity: 0; /* Hidden by default */
+    transition: opacity 0.3s ease;
+    pointer-events: none; /* Allows click to pass through to the image */
+}
+
+.image-container:hover .image-overlay {
+    opacity: 1; /* Show on hover */
+}
+
+
+.info-card {
+    background-color: #2a2a2a;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+    max-width: 600px;
+}
+
+/* --- BUTTON STYLE --- */
+#cool-button {
+    background-color: var(--blue-anime);
+    color: var(--dark-bg);
+    border: none;
+    padding: 15px 30px;
+    margin-top: 20px;
+    font-size: 1.2rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 0 #0097a7; /* 3D effect */
+}
+
+#cool-button:hover {
+    background-color: #0097a7;
+    transform: translateY(2px); /* Press animation */
+    box-shadow: 0 2px 0 #007c8a;
+}
+
+/* --- FOOTER --- */
+footer {
+    padding: 20px;
+    margin-top: 40px;
+    background-color: #111;
+}
